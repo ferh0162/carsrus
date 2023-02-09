@@ -30,7 +30,7 @@ public class CarRequest {
     this.brand = brand;
     this.model1 = model1;
     this.pricePrDay = pricePrDay;
-
   }
+
 }
 
