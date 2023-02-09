@@ -1,10 +1,16 @@
 package dat3.cars.entity;
 
 import jakarta.persistence.*;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+
+@Getter
+@Setter
+@AllArgsConstructor
+@Builder
 
 @Entity
 public class Car {
@@ -30,5 +36,9 @@ public class Car {
 
   @UpdateTimestamp
   private  LocalDateTime updatedTime;
+
+  public Car() {
+
+  }
 
 }

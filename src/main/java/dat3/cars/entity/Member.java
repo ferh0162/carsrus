@@ -16,6 +16,7 @@ import java.util.Map;
 @Getter
 @Setter
 @NoArgsConstructor
+
 @Entity
 public class Member {
 
@@ -31,6 +32,8 @@ public class Member {
   private boolean approved;
   private int ranking;
 
+
+
   public Member(String user, String password, String email,
                 String firstName, String lastName, String street, String city, String zip) {
     this.username = user;
@@ -44,10 +47,10 @@ public class Member {
   }
 
   @CreationTimestamp
-  private LocalDateTime creationTime;
+  private LocalDateTime created;
 
   @UpdateTimestamp
-  private  LocalDateTime updatedTime;
+  private  LocalDateTime lastEdited;
 
   @ElementCollection
   List<String> favoriteCarColors = new ArrayList<>();
