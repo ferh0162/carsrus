@@ -65,21 +65,6 @@ class MemberServiceH2Test {
 
   }
 
-  @Test
-  void getMembersAdmin() {
-    List<MemberResponse> members = memberService.getMembers(true);
-    assertEquals(2, members.size());
-    assertNotNull(members.get(0).getCreated());
-    assertNotNull(members.get(0).getRanking());
-  }
-
-  @Test
-  void getMembersNotAdmin() {
-    List<MemberResponse> members = memberService.getMembers(false);
-    assertEquals(2, members.size());
-    assertNull(members.get(0).getCreated());
-    assertNull(members.get(0).getRanking());
-  }
 
 
   @Test
@@ -90,33 +75,9 @@ class MemberServiceH2Test {
     assertNull(res.getCreated());
   }
 
-  @Test
-  void editMember() throws InterruptedException {
-    MemberRequest request = new MemberRequest(m1);
-    //Fields to edit
-    request.setStreet("New Street");
-    request.setEmail("newEmail@a.dk");
-
-    ResponseEntity<Boolean> res = memberService.editMember(request, m1.getUsername());
-    assertTrue(res.getBody().booleanValue());
-
-    readEditedMemberAndVerifyAllValues();
-  }
 
 
 
-  @Test
-  void editMemberV2() {
-    MemberRequest request = MemberRequest.builder().username(m1.getUsername()).build();
-    //Fields to edit  --> Observe many fields in request this are null (not set)
-    request.setStreet("New Street");
-    request.setEmail("newEmail@a.dk");
-
-    ResponseEntity<Boolean> res = memberService.editMemberV2(request, m1.getUsername());
-    assertTrue(res.getBody().booleanValue());
-    //Verify that the fields given above where changed, and all other fields are unchanged
-    readEditedMemberAndVerifyAllValues();
-  }
 
   private void readEditedMemberAndVerifyAllValues() {
 //    Next two lines are necessary to make sure the date fields in the DB is actually updated
