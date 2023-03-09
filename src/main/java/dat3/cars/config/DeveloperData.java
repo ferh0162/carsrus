@@ -60,23 +60,7 @@ public class DeveloperData implements CommandLineRunner {
             Car.builder().brand("Suzuki").model("SX4").pricePrDay(400).bestDiscount(16).build(),
             Car.builder().brand("Kia").model("Sorento").pricePrDay(500).bestDiscount(22).build(),
             Car.builder().brand("WW").model("Pickup").pricePrDay(450).bestDiscount(28).build(),
-            Car.builder().brand("Volvo").model("V60").pricePrDay(700).bestDiscount(15).build(),
-            Car.builder().brand("Suzuki").model("Grand Vitara").pricePrDay(450).bestDiscount(12).build(),
-            Car.builder().brand("Kia").model("Sportage").pricePrDay(500).bestDiscount(20).build(),
-            Car.builder().brand("WW").model("SUV").pricePrDay(400).bestDiscount(18).build(),
-            Car.builder().brand("Volvo").model("XC90").pricePrDay(800).bestDiscount(25).build(),
-            Car.builder().brand("Volvo").model("XC90").pricePrDay(800).bestDiscount(25).build(),
-            Car.builder().brand("Volvo").model("XC90").pricePrDay(800).bestDiscount(25).build(),
-            Car.builder().brand("Suzuki").model("Baleno").pricePrDay(450).bestDiscount(15).build(),
-            Car.builder().brand("Kia").model("Stinger").pricePrDay(600).bestDiscount(12).build(),
-            Car.builder().brand("WW").model("Sedan").pricePrDay(400).bestDiscount(20).build(),
-            Car.builder().brand("Volvo").model("XC40").pricePrDay(700).bestDiscount(30).build(),
-            Car.builder().brand("Volvo").model("XC40").pricePrDay(700).bestDiscount(30).build(),
-            Car.builder().brand("Volvo").model("XC40").pricePrDay(700).bestDiscount(30).build(),
-            Car.builder().brand("Suzuki").model("Ignis").pricePrDay(400).bestDiscount(14).build(),
-            Car.builder().brand("Kia").model("Rio").pricePrDay(450).bestDiscount(12).build(),
-            Car.builder().brand("WW").model("Hatchback").pricePrDay(450).bestDiscount(16).build()
-    ));
+            Car.builder().brand("Volvo").model("V60").pricePrDay(700).bestDiscount(15).build()));
     carRepository.saveAll(newCars);
   }
 
